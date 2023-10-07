@@ -10,6 +10,11 @@ namespace Day9_MoodAnalyserPracticeProblems
     {
         private string message;
 
+        public MoodAnalyser()
+        {
+            this.message = string.Empty;
+        }
+
         public MoodAnalyser(string message)
         {
             this.message = message;
@@ -29,7 +34,7 @@ namespace Day9_MoodAnalyserPracticeProblems
             }
             else
             {
-                return "Happy";
+                return "Happy"; 
             }
         }
     }

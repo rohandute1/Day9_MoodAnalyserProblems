@@ -34,5 +34,33 @@ namespace MoodAnalyseTest
             // Assert
             Assert.AreEqual("Happy", mood);
         }
+
+        [TestMethod]
+        public void AnalyseMood_ShouldReturnSAD_WhenMessageProvidedInConstructor()
+        {
+            // Arrange
+            string message = "I am in Sad Mood";
+            MoodAnalyser moodAnalyser = new MoodAnalyser(message);
+
+            // Act
+            string mood = moodAnalyser.AnalyseMood();
+
+            // Assert
+            Assert.AreEqual("Sad", mood);
+        }
+
+        [TestMethod]
+        public void AnalyseMood_ShouldReturnSAD_WhenCalledWithNoParamsAfterMessageInConstructor()
+        {
+            // Arrange
+            string message = "I am in Sad Mood";
+            MoodAnalyser moodAnalyser = new MoodAnalyser(message);
+
+            // Act
+            string mood = moodAnalyser.AnalyseMood();
+
+            // Assert
+            Assert.AreEqual("Sad", mood);
+        }
     }
 }
