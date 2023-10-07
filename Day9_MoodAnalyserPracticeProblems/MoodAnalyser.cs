@@ -17,7 +17,6 @@ namespace Day9_MoodAnalyserPracticeProblems
 
         public string AnalyseMood()
         {
-            // Convert the message to lowercase for case-insensitive comparison
             string lowercaseMessage = message.ToLower();
 
             if (lowercaseMessage.Contains("happy"))
