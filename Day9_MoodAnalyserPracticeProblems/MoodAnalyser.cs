@@ -29,7 +29,7 @@ namespace Day9_MoodAnalyserPracticeProblems
             }
             else
             {
-                return "Cannot determine mood";
+                return "Happy";
             }
         }
     }
