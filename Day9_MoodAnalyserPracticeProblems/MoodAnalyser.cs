@@ -19,17 +19,22 @@ namespace Day9_MoodAnalyserPracticeProblems
         // Constructor with parameters
         public MoodAnalyser(string message)
         {
-            this.message = message;
+            this.message = message ?? throw new ArgumentNullException(nameof(message), "Message cannot be null");
         }
 
         public string AnalyseMood()
         {
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                throw new InvalidOperationException("Message is empty or whitespace.");
+            }
+
             // Convert the message to lowercase for case-insensitive comparison
             string lowercaseMessage = message.ToLower();
 
             if (lowercaseMessage.Contains("happy"))
             {
-                return "Sad"; // Return "Sad" when "Happy" is found
+                return "Happy";
             }
             else if (lowercaseMessage.Contains("sad"))
             {
@@ -37,7 +42,7 @@ namespace Day9_MoodAnalyserPracticeProblems
             }
             else
             {
-                return "Happy"; // Return "Happy" when neither "Sad" nor "Happy" is found
+                return "Happy"; // Return "Happy" for invalid moods
             }
         }
     }
