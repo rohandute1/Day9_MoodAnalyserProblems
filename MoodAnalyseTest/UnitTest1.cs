@@ -62,5 +62,18 @@ namespace MoodAnalyseTest
             // Assert
             Assert.AreEqual("Sad", mood);
         }
+        [TestMethod]
+        public void AnalyseMood_ShouldReturnSAD_WhenGivenHappyMessageInConstructor()
+        {
+            // Arrange
+            string message = "I am in Happy Mood";
+            MoodAnalyser moodAnalyser = new MoodAnalyser(message);
+
+            // Act
+            string mood = moodAnalyser.AnalyseMood();
+
+            // Assert
+            Assert.AreEqual("Sad", mood);
+        }
     }
 }

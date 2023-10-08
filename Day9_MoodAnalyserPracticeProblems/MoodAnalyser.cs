@@ -10,11 +10,13 @@ namespace Day9_MoodAnalyserPracticeProblems
     {
         private string message;
 
+        // Default constructor
         public MoodAnalyser()
         {
             this.message = string.Empty;
         }
 
+        // Constructor with parameters
         public MoodAnalyser(string message)
         {
             this.message = message;
@@ -22,11 +24,12 @@ namespace Day9_MoodAnalyserPracticeProblems
 
         public string AnalyseMood()
         {
+            // Convert the message to lowercase for case-insensitive comparison
             string lowercaseMessage = message.ToLower();
 
             if (lowercaseMessage.Contains("happy"))
             {
-                return "Happy";
+                return "Sad"; // Return "Sad" when "Happy" is found
             }
             else if (lowercaseMessage.Contains("sad"))
             {
@@ -34,7 +37,7 @@ namespace Day9_MoodAnalyserPracticeProblems
             }
             else
             {
-                return "Happy"; 
+                return "Happy"; // Return "Happy" when neither "Sad" nor "Happy" is found
             }
         }
     }
